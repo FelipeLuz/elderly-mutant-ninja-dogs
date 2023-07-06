@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwjes7wq1j85d"]
+
+[ext_resource type="Texture2D" uid="uid://bh80j8dhbkiir" path="res://Art/City/Levels/Level-1.png" id="1_bcl0o"]
+[ext_resource type="Script" path="res://Scripts/Pole.cs" id="1_kqerb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swebl"]
+atlas = ExtResource("1_bcl0o")
+region = Rect2(123, 223, 41, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3ak3"]
+atlas = ExtResource("1_bcl0o")
+region = Rect2(82, 230, 40, 169)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsrvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swebl")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3ak3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ast0i"]
+size = Vector2(24, 32)
+
+[node name="Pole" type="CharacterBody2D"]
+script = ExtResource("1_kqerb")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rsrvg")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 8)
+shape = SubResource("RectangleShape2D_ast0i")

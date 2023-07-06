@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cinq4eme7omhq"
+path="res://.godot/imported/go.wav-7e5cbb400ed16cb0e1ee0be4d37b9c77.sample"
+
+[deps]
+
+source_file="res://Art/Godot - Beat em Up - Assets/sound/go.wav"
+dest_files=["res://.godot/imported/go.wav-7e5cbb400ed16cb0e1ee0be4d37b9c77.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi1unrvp2khet"]
+
+[ext_resource type="Script" path="res://Scripts/Heart.cs" id="1_if4hi"]
+[ext_resource type="Texture2D" uid="uid://cipvrlmdq685f" path="res://Art/Items/tile_0044.png" id="2_v2anf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk660"]
+atlas = ExtResource("2_v2anf")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y3fma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk660")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8l7j"]
+radius = 6.08276
+
+[node name="Heart" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_if4hi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y3fma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v8l7j")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

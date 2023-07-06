@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://4do5jqck5s6v"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy1.cs" id="1_1y78d"]
+[ext_resource type="Texture2D" uid="uid://v8t3hx1anf4s" path="res://Art/Enemies/galsiabig.png" id="1_613la"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lobep"]
+atlas = ExtResource("1_613la")
+region = Rect2(195, 0, 65, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgvwp"]
+atlas = ExtResource("1_613la")
+region = Rect2(0, 0, 65, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbp23"]
+atlas = ExtResource("1_613la")
+region = Rect2(65, 0, 65, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w74um"]
+atlas = ExtResource("1_613la")
+region = Rect2(130, 0, 65, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn05a"]
+atlas = ExtResource("1_613la")
+region = Rect2(65, 0, 65, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_djh0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lobep")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgvwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbp23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w74um")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn05a")
+}],
+"loop": true,
+"name": &"WalkRight",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cgp56"]
+height = 80.0
+
+[node name="Enemy1" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_1y78d")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_djh0t")
+animation = &"Hurt"
+autoplay = "WalkRight"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_cgp56")

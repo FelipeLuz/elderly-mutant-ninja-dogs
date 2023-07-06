@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdrgs8u1pmbyo"]
+
+[ext_resource type="Texture2D" uid="uid://cipvrlmdq685f" path="res://Art/Items/tile_0044.png" id="1_whgyt"]
+[ext_resource type="Texture2D" uid="uid://bcwhvqnrgk64i" path="res://Art/Items/tile_0151.png" id="2_5dnhk"]
+
+[node name="ResourceDisplay" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Coins" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Coins"]
+layout_mode = 2
+texture = ExtResource("2_5dnhk")
+stretch_mode = 3
+
+[node name="Value" type="Label" parent="Coins"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Life" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Life"]
+layout_mode = 2
+texture = ExtResource("1_whgyt")
+stretch_mode = 3
+
+[node name="Value" type="Label" parent="Life"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

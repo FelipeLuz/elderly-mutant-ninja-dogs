@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://i4sff1ydrfdn"
+path="res://.godot/imported/boss_fight.mp3-c641eba85c369f70d0bcb86321c37213.mp3str"
+
+[deps]
+
+source_file="res://Art/Godot - Beat em Up - Assets/sound/boss_fight.mp3"
+dest_files=["res://.godot/imported/boss_fight.mp3-c641eba85c369f70d0bcb86321c37213.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
